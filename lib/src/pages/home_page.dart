@@ -53,7 +53,7 @@ Widget _body(PanelController pc) {
                             icon: Icon(Icons.location_on_sharp),
                             iconSize: 45.0,
                             onPressed: () {
-                              pc.open();
+                              pc.show();
                             })),
                   ),
                 ],
