@@ -13,16 +13,20 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SlidingUpPanel(
-        controller: _pc,
-        panel: Center(
-          child: Text("This is the sliding Widget"),
-        ),
-        body: _body(),
-      ),
+      body: _builsSlidingPanel(),
       floatingActionButton: _searchButton(),
     );
   }
+}
+
+Widget _builsSlidingPanel() {
+  return SlidingUpPanel(
+    //controller: _pc,
+    panel: Center(
+      child: Text("This is the sliding Widget"),
+    ),
+    body: _body(),
+  );
 }
 
 Widget _body() {
