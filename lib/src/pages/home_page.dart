@@ -26,6 +26,7 @@ Widget _buildSlidingPanel(PanelController pc) {
       child: Text("This is the sliding Widget"),
     ),
     body: _body(),
+    onPanelOpened: null,
   );
 }
 
