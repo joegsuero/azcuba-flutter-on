@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
 Widget _buildSlidingPanel(PanelController pc) {
   return SlidingUpPanel(
     controller: pc,
-    collapsed: Center(
+    panel: Center(
       child: Text("This is the sliding Widget"),
     ),
     body: _body(),
