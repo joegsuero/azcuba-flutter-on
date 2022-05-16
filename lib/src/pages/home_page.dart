@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.search),
         backgroundColor: Colors.green.shade900,
         onPressed: () {
-          _pc.show();
+          _pc.hide();
           print("sasasas");
         },
       ),
