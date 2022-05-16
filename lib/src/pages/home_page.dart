@@ -8,10 +8,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PanelController _pc = new PanelController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SlidingUpPanel(
+        controller: _pc,
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
