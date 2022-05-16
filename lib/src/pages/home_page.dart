@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.search),
+        backgroundColor: Colors.green,
         onPressed: () {},
       ),
     );
