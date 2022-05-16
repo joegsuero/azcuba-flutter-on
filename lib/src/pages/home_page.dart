@@ -51,7 +51,7 @@ Widget _body() {
 }
 
 Widget _searchButton(PanelController pc) {
-  pc.hide()
+  pc.hide();
   return FloatingActionButton(
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
