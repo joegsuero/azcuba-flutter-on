@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
 }
 
 Widget _buildSlidingPanel(PanelController pc) {
+  pc.hide();
   return SlidingUpPanel(
     controller: pc,
     panel: Center(
