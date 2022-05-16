@@ -48,7 +48,14 @@ Widget _body() {
                     width: 1280.0,
                     height: 1280.0,
                     point: LatLng(21.463, -78.322),
-                    builder: (ctx) => Container(child: IconButton(icon: Icon(Icons.location_on_sharp), iconSize: 45.0, onPressed: () {})),
+                    builder: (ctx) => Container(
+                      child: IconButton(
+                        icon: Icon(Icons.location_on_sharp), 
+                        iconSize: 45.0, 
+                        onPressed: () 
+                        {print("sasaasas")
+                        })
+                        ),
                   ),
                 ],
               ),
