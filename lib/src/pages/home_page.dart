@@ -45,8 +45,8 @@ Widget _body() {
               MarkerLayerOptions(
                 markers: [
                   Marker(
-                    width: 80.0,
-                    height: 80.0,
+                    width: 800.0,
+                    height: 800.0,
                     point: LatLng(21.463, -78.322),
                     builder: (ctx) => Container(
                       child: FlutterLogo(),
