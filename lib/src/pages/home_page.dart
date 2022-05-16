@@ -15,10 +15,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SlidingUpPanel(
         controller: _pc,
-        panel.hide(),
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
+        hide,
         body: Center(
           child: Container(
             child: Column(
