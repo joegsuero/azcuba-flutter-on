@@ -25,11 +25,11 @@ Widget _buildSlidingPanel(PanelController pc) {
     panel: Center(
       child: Text("This is the sliding Widget"),
     ),
-    body: _body(),
+    body: _body(pc),
   );
 }
 
-Widget _body() {
+Widget _body(PanelController pc) {
   return Container(
     child: Column(
       children: [
@@ -53,7 +53,7 @@ Widget _body() {
                             icon: Icon(Icons.location_on_sharp),
                             iconSize: 45.0,
                             onPressed: () {
-                              print("sasaasas");
+                              pc.show();
                             })),
                   ),
                 ],
