@@ -12,7 +12,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    _hideSlide(_pc);
     return Scaffold(
       body: _buildSlidingPanel(_pc),
       floatingActionButton: _searchButton(_pc),
@@ -59,8 +58,4 @@ Widget _searchButton(PanelController pc) {
         pc.hide();
         print("sasasas");
       });
-}
-
-void _hideSlide(PanelController pc) {
-  pc.hide();
 }
