@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
-        onPanelClosed: true,
+        onPanelClosed: True,
         body: Center(
           child: Container(
             child: Column(
