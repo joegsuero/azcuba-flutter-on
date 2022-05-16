@@ -18,7 +18,6 @@ class _HomePageState extends State<HomePage> {
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
-        defaultPanelState: PanelState.CLOSED,
         body: Center(
           child: Container(
             child: Column(
@@ -43,7 +42,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.search),
         backgroundColor: Colors.green.shade900,
-        onPressed: () {},
+        onPressed: () {
+          _pc.show();
+        },
       ),
     );
   }
