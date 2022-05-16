@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
-        hide,
+        collapsed: true,
         body: Center(
           child: Container(
             child: Column(
