@@ -30,6 +30,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.search),
+        onPressed: () {},
+      ),
     );
   }
 }
