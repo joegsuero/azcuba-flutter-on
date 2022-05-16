@@ -11,10 +11,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SlidingUpPanel(
-      panel: Center(
-        child: Text("This is the sliding Widget"),
-      ),
       body: Center(
         child: Container(
           child: Column(
