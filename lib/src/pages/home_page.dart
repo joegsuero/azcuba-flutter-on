@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PanelController _pc = new PanelController();
+  _pc.setState.CLOSED;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,6 @@ Widget _body() {
 }
 
 Widget _searchButton(PanelController pc) {
-  pc.hide()
   return FloatingActionButton(
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
