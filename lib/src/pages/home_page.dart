@@ -9,7 +9,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PanelController _pc = new PanelController();
-
+  _pc.hide();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
