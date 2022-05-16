@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SlidingUpPanel(
-        controller: _pc,
+        controller: _pc.close(),
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
