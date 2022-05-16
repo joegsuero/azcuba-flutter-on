@@ -18,27 +18,7 @@ class _HomePageState extends State<HomePage> {
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
-        onPanelClosed: null,
-        body: Center(
-          child: Container(
-            child: Column(
-              children: [
-                Flexible(
-                  child: FlutterMap(
-                    options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
-                    layers: [
-                      TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
-                        'a',
-                        'b',
-                        'c'
-                      ]),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        body: _body(),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.search),
@@ -50,4 +30,25 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+Widget _body() {
+  return Container(
+    child: Column(
+      children: [
+        Flexible(
+          child: FlutterMap(
+            options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
+            layers: [
+              TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
+                'a',
+                'b',
+                'c'
+              ]),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
 }
