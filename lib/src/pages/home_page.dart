@@ -49,7 +49,7 @@ Widget _body() {
                     height: 80.0,
                     point: LatLng(21.463, -78.322),
                     builder: (ctx) => Container(
-                      child: FlutterLogo(),
+                      child: Icon(Icons.location_on_sharp),
                     ),
                   ),
                 ],
