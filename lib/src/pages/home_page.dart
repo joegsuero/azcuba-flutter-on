@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
         panel: Center(
           child: Text("This is the sliding Widget"),
         ),
+        defaultPanelState: hide(),
         body: Center(
           child: Container(
             child: Column(
@@ -43,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         child: const Icon(Icons.search),
         backgroundColor: Colors.green.shade900,
         onPressed: () {
-          _pc.hide();
+          _pc.show();
           print("sasasas");
         },
       ),
