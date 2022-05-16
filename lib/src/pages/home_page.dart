@@ -20,14 +20,7 @@ class _HomePageState extends State<HomePage> {
         ),
         body: _body(),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.search),
-        backgroundColor: Colors.green.shade900,
-        onPressed: () {
-          _pc.show();
-          print("sasasas");
-        },
-      ),
+      floatingActionButton: _searchButton(),
     );
   }
 }
@@ -51,4 +44,14 @@ Widget _body() {
       ],
     ),
   );
+}
+
+Widget _searchButton() {
+  return FloatingActionButton(
+      child: const Icon(Icons.search),
+      backgroundColor: Colors.green.shade900,
+      onPressed: () {
+        //_pc.show();
+        print("sasasas");
+      });
 }
