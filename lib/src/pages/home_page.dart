@@ -13,15 +13,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _builsSlidingPanel(),
-      floatingActionButton: _searchButton(),
+      body: _builsSlidingPanel(_pc),
+      floatingActionButton: _searchButton(_pc),
     );
   }
 }
 
-Widget _builsSlidingPanel() {
+Widget _builsSlidingPanel(PanelController pc) {
   return SlidingUpPanel(
-    //controller: _pc,
+    controller: pc,
     panel: Center(
       child: Text("This is the sliding Widget"),
     ),
@@ -50,12 +50,12 @@ Widget _body() {
   );
 }
 
-Widget _searchButton() {
+Widget _searchButton(PanelController pc) {
   return FloatingActionButton(
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
       onPressed: () {
-        //_pc.show();
+        pc.hide();
         print("sasasas");
       });
 }
