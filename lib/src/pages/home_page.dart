@@ -11,23 +11,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          child: Column(
-            children: [
-              Flexible(
-                child: FlutterMap(
-                  options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
-                  layers: [
-                    TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
-                      'a',
-                      'b',
-                      'c'
-                    ]),
-                  ],
+      body: SlidingUpPanel(
+        panel: Center(
+          child: Text("This is the sliding Widget"),
+        ),
+        body: Center(
+          child: Container(
+            child: Column(
+              children: [
+                Flexible(
+                  child: FlutterMap(
+                    options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
+                    layers: [
+                      TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
+                        'a',
+                        'b',
+                        'c'
+                      ]),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
