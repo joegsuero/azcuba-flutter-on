@@ -14,8 +14,9 @@ class DBProvider {
   Future<Database> get database async => _database ??= await initDB();
 
   initDB() async {
-    Directory documentsDirectory = await getApplicationDocumentsDirectory();
-    final path = join(documentsDirectory.path, 'db_anuario');
+    //Directory documentsDirectory = await getApplicationDocumentsDirectory();
+    //final path = join(documentsDirectory.path, 'db_anuario');
+    final path = "application/src/bd/bd.sql";
 
     return await openDatabase(path, version: 1, onOpen: (db) {}, onCreate: (Database db, int version) async {
       await db.execute('CREATE TABLE empresa ('
