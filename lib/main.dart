@@ -11,7 +11,7 @@ void main() {
         primaryColor: Colors.green.shade900,
       )));
 */
-
+  WidgetsFlutterBinding.ensureInitialized();
   var empr = const Empresa(
     id: 1,
     name: "CUJAI",
