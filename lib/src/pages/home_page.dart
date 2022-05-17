@@ -60,7 +60,6 @@ Widget _searchButton(PanelController pc) {
         DBProvider.db.insertEmpresa(empr);
 
         print(DBProvider.db.empresas());
-        print(DBProvider.db.empresas().id);
       });
 }
 
