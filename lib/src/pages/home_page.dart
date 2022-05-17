@@ -24,7 +24,7 @@ Widget _buildSlidingPanel(PanelController pc) {
     controller: pc,
     panel: Center(
       child: Text("This is the sliding Widget"),
-    ),
+    )collapsed: null,
     body: _body(pc),
   );
 }
@@ -71,7 +71,7 @@ Widget _searchButton(PanelController pc) {
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
       onPressed: () {
-        pc.hide();
+        //pc.hide();
         print("sasasas");
       });
 }
