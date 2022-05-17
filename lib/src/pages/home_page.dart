@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildSlidingPanel(_pc),
-      //floatingActionButton: _searchButton(_pc),
+      floatingActionButton: _searchButton(_pc),
     );
   }
 }
