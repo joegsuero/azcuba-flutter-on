@@ -3,6 +3,9 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
+import 'package:application/src/models/empresa.dart';
+import 'package:application/src/providers/db_providers.dart';
+
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
@@ -47,7 +50,16 @@ Widget _searchButton(PanelController pc) {
       backgroundColor: Colors.green.shade900,
       onPressed: () {
         //pc.hide();
-        print("sasasas");
+        var empr = const Empresa(
+          id: 1,
+          name: "CUJAI",
+          latitude: 12.2,
+          longitud: 12.45,
+        );
+
+        DBProvider.db.insertEmpresa(empr);
+
+        print(DBProvider.db.empresas());
       });
 }
 
