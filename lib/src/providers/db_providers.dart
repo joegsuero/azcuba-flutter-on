@@ -51,6 +51,7 @@ class DBProvider {
         name: maps[i]['name'],
         latitude: maps[i]['latitude'],
         longitud: maps[i]['longitud'],
+        print("dsdsdsdsdsdsd")
       );
     });
   }
