@@ -14,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildSlidingPanel(_pc),
-      floatingActionButton: _searchButton(_pc),
+      //floatingActionButton: _searchButton(_pc),
     );
   }
 }
@@ -24,7 +24,7 @@ Widget _buildSlidingPanel(PanelController pc) {
     controller: pc,
     panel: Center(
       child: Text("This is the sliding Widget"),
-    )collapsed: null,
+    ),
     body: _body(pc),
   );
 }
@@ -34,32 +34,7 @@ Widget _body(PanelController pc) {
     child: Column(
       children: [
         Flexible(
-          child: FlutterMap(
-            options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
-            layers: [
-              TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
-                'a',
-                'b',
-                'c'
-              ]),
-              MarkerLayerOptions(
-                markers: [
-                  Marker(
-                    width: 1280.0,
-                    height: 1280.0,
-                    point: LatLng(21.463, -78.322),
-                    builder: (ctx) => Container(
-                        child: IconButton(
-                            icon: Icon(Icons.location_on_sharp),
-                            iconSize: 45.0,
-                            onPressed: () {
-                              pc.show();
-                            })),
-                  ),
-                ],
-              ),
-            ],
-          ),
+          child: _buildMap(),
         ),
       ],
     ),
@@ -74,4 +49,33 @@ Widget _searchButton(PanelController pc) {
         //pc.hide();
         print("sasasas");
       });
+}
+
+Widget _buildMap() {
+  return FlutterMap(
+    options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
+    layers: [
+      TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
+        'a',
+        'b',
+        'c'
+      ]),
+      MarkerLayerOptions(
+        markers: [
+          Marker(
+            width: 1280.0,
+            height: 1280.0,
+            point: LatLng(21.463, -78.322),
+            builder: (ctx) => Container(
+                child: IconButton(
+                    icon: Icon(Icons.location_on_sharp),
+                    iconSize: 45.0,
+                    onPressed: () {
+                      //pc.show();
+                    })),
+          ),
+        ],
+      ),
+    ],
+  );
 }
