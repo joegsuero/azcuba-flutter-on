@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildSlidingPanel(_pc),
-      floatingActionButton: _searchButton(_pc),
+      //floatingActionButton: _searchButton(_pc),
     );
   }
 }
@@ -52,7 +52,7 @@ Widget _searchButton(PanelController pc) {
         //pc.hide();
         var empr = const Empresa(
           id: 1,
-          name: "CUJAI",
+          name: "CUJAE",
           latitude: 12.2,
           longitud: 12.45,
         );
