@@ -103,6 +103,13 @@ List<Marker> _buildMarkersOnMap() {
     builder: (context) => _buildCustomMarker(),
   );
   markers.add(marker);
+  var mark = new Marker(
+    point: LatLng(21.463, -73.322),
+    width: 279.0,
+    height: 256.0,
+    builder: (context) => _buildCustomMarker(),
+  );
+  markers.add(mark);
   return markers;
 }
 
