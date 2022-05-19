@@ -4,7 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import 'package:application/src/models/empresa.dart';
-import 'package:application/src/providers/db_providers.dart';
+//import 'package:application/src/providers/db_providers.dart';
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
@@ -58,9 +58,9 @@ Widget _searchButton(PanelController pc) {
           longitud: 12.45,
         );
 
-        DBProvider.db.insertEmpresa(empr);
+        //DBProvider.db.insertEmpresa(empr);
 
-        print(DBProvider.db.empresas());
+        //print(DBProvider.db.empresas());
       });
 }
 
@@ -74,7 +74,7 @@ Widget _buildMap() {
         'c'
       ]),
       MarkerLayerOptions(
-        markers: [
+        markers: _buildMarkersOnMap(),/*[
           Marker(
             width: 1280.0,
             height: 1280.0,
@@ -87,14 +87,15 @@ Widget _buildMap() {
                       //pc.show();
                     })),
           ),
-        ],
+        ]*/,
       ),
     ],
   );
 }
 
 List<Marker> _buildMarkersOnMap() {
-  List<Marker> markers = List<Marker>();
+  LatLng _center = LatLng(21.463, -72.322);
+  List<Marker> markers = <Marker>[];
   var marker = new Marker(
     point: _center,
     width: 279.0,
@@ -111,13 +112,13 @@ GlobalKey<State> key = new GlobalKey();
 Stack _buildCustomMarker() {
   return Stack(
     children: <Widget>[
-      popup(),
+      //popup(),
       marker()
     ],
   );
 }
 
-Opacity popup() {
+/*Opacity popup() {
   return Opacity(
     opacity: infoWindowVisible ? 1.0 : 0.0,
     child: Container(
@@ -128,7 +129,7 @@ Opacity popup() {
       child: CustomPopup(key: key),
     ),
   );
-}
+}*/
 
 Opacity marker() {
   return Opacity(
