@@ -94,20 +94,19 @@ Widget _buildMap() {
 }
 
 List<Marker> _buildMarkersOnMap() {
-  LatLng _center = LatLng(21.463, -72.322);
   List<Marker> markers = <Marker>[];
   var marker = new Marker(
-    point: _center,
+    point: LatLng(21.463, -72.322),
     width: 279.0,
     height: 256.0,
-    builder: (context) => _buildCustomMarker(),
+    builder: (context) => _buildCustomMarker(21.463, -72.322),
   );
   markers.add(marker);
   var mark = new Marker(
     point: LatLng(21.463, -73.322),
     width: 279.0,
     height: 256.0,
-    builder: (context) => _buildCustomMarker(),
+    builder: (context) => _buildCustomMarker(21.463, -73.322),
   );
   markers.add(mark);
   return markers;
@@ -116,11 +115,11 @@ List<Marker> _buildMarkersOnMap() {
 var infoWindowVisible = false;
 GlobalKey<State> key = new GlobalKey();
 
-Stack _buildCustomMarker() {
+Stack _buildCustomMarker(double lat, double lon) {
   return Stack(
     children: <Widget>[
       //popup(),
-      marker()
+      marker(lat, lon)
     ],
   );
 }
@@ -138,13 +137,16 @@ Stack _buildCustomMarker() {
   );
 }*/
 
-Opacity marker() {
+Opacity marker(double lat, double lon) {
   return Opacity(
     child: Container(
         child: IconButton(
             icon: Icon(Icons.location_on_sharp),
             iconSize: 45.0,
+            color: Colors.green.shade900,
             onPressed: () {
+              print(lat);
+              print(lon);
               //pc.show();
             })),
     opacity: infoWindowVisible ? 0.0 : 1.0,
