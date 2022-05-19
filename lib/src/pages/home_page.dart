@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PanelController _pc = new PanelController();
+  // LatLng _center = LatLng(21.463, -72.322);
 
   @override
   Widget build(BuildContext context) {
@@ -89,5 +90,55 @@ Widget _buildMap() {
         ],
       ),
     ],
+  );
+}
+
+List<Marker> _buildMarkersOnMap() {
+  List<Marker> markers = List<Marker>();
+  var marker = new Marker(
+    point: _center,
+    width: 279.0,
+    height: 256.0,
+    builder: (context) => _buildCustomMarker(),
+  );
+  markers.add(marker);
+  return markers;
+}
+
+var infoWindowVisible = false;
+GlobalKey<State> key = new GlobalKey();
+
+Stack _buildCustomMarker() {
+  return Stack(
+    children: <Widget>[
+      popup(),
+      marker()
+    ],
+  );
+}
+
+Opacity popup() {
+  return Opacity(
+    opacity: infoWindowVisible ? 1.0 : 0.0,
+    child: Container(
+      alignment: Alignment.bottomCenter,
+      width: 279.0,
+      height: 256.0,
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/ic_info_window.png"), fit: BoxFit.cover)),
+      child: CustomPopup(key: key),
+    ),
+  );
+}
+
+Opacity marker() {
+  return Opacity(
+    child: Container(
+        child: IconButton(
+            icon: Icon(Icons.location_on_sharp),
+            iconSize: 45.0,
+            onPressed: () {
+              //pc.show();
+            })),
+    opacity: infoWindowVisible ? 0.0 : 1.0,
   );
 }
