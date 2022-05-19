@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 //
 import 'package:application/src/pages/home_page.dart';
 
@@ -10,7 +10,7 @@ void main() {
         primaryColor: Colors.green.shade900,
       )));
 }
-*/
+/*
 
 import 'dart:ui';
 
@@ -290,3 +290,4 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+*/
