@@ -74,7 +74,7 @@ Widget _buildMap() {
         'c'
       ]),
       MarkerLayerOptions(
-        markers: _buildMarkersOnMap(),/*[
+        markers: _buildMarkersOnMap(), /*[
           Marker(
             width: 1280.0,
             height: 1280.0,
@@ -87,7 +87,7 @@ Widget _buildMap() {
                       //pc.show();
                     })),
           ),
-        ]*/,
+        ],*/
       ),
     ],
   );
