@@ -14,114 +14,42 @@ class _HomePageState extends State<HomePage> {
   PanelController _pc = new PanelController();
   // LatLng _center = LatLng(21.463, -72.322);
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _buildSlidingPanel(_pc, context),
       //floatingActionButton: _searchButton(_pc),
     );
+  }*/
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: _buildSlidingPanel(_pc, context),
+    );
   }
 }
 
-Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
+/*Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
   return SlidingUpPanel(
+    backdropEnabled: true,
     controller: pc,
     panelBuilder: (sc) => _panel(sc, context),
     body: _body(pc),
   );
-}
+}*/
 
-Widget _body(PanelController pc) {
-  return Container(
-    child: Column(
-      children: [
-        Flexible(
-          child: _buildMap(),
-        ),
-      ],
-    ),
-  );
-}
-
-Widget _searchButton(PanelController pc) {
-  return FloatingActionButton(
-      child: const Icon(Icons.search),
-      backgroundColor: Colors.green.shade900,
-      onPressed: () {
-        //pc.hide();
-        var empr = const Empresa(
-          id: 1,
-          name: "CUJAE",
-          latitude: 12.2,
-          longitud: 12.45,
-        );
-
-        //DBProvider.db.insertEmpresa(empr);
-
-        //print(DBProvider.db.empresas());
-      });
-}
-
-Widget _buildMap() {
-  return FlutterMap(
-    options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
-    layers: [
-      TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
-        'a',
-        'b',
-        'c'
-      ]),
-      MarkerLayerOptions(
-        markers: _buildMarkersOnMap(),
+Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
+  return SlidingUpPanel(
+    backdropEnabled: true,
+    controller: pc,
+    panelBuilder: (sc) => _panel(sc, context),
+    body: Scaffold(
+      appBar: AppBar(
+        title: Text("SlidingUpPanelExample"),
       ),
-    ],
-  );
-}
-
-List<Marker> _buildMarkersOnMap() {
-  List<Marker> markers = <Marker>[];
-  var marker = new Marker(
-    point: LatLng(21.463, -72.322),
-    width: 279.0,
-    height: 256.0,
-    builder: (context) => _buildCustomMarker(21.463, -72.322),
-  );
-  markers.add(marker);
-  var mark = new Marker(
-    point: LatLng(21.463, -73.322),
-    width: 279.0,
-    height: 256.0,
-    builder: (context) => _buildCustomMarker(21.463, -73.322),
-  );
-  markers.add(mark);
-  return markers;
-}
-
-var infoWindowVisible = false;
-GlobalKey<State> key = new GlobalKey();
-
-Stack _buildCustomMarker(double lat, double lon) {
-  return Stack(
-    children: <Widget>[
-      //popup(),
-      marker(lat, lon)
-    ],
-  );
-}
-
-Opacity marker(double lat, double lon) {
-  return Opacity(
-    child: Container(
-        child: IconButton(
-            icon: Icon(Icons.location_on_sharp),
-            iconSize: 45.0,
-            color: Colors.green.shade900,
-            onPressed: () {
-              print(lat);
-              print(lon);
-              //pc.show();
-            })),
-    opacity: infoWindowVisible ? 0.0 : 1.0,
+      body: _body(pc),
+    ),
   );
 }
 
@@ -237,6 +165,18 @@ Widget _panel(ScrollController sc, BuildContext context) {
       ));
 }
 
+Widget _body(PanelController pc) {
+  return Container(
+    child: Column(
+      children: [
+        Flexible(
+          child: _buildMap(),
+        ),
+      ],
+    ),
+  );
+}
+
 Widget _button(String label, IconData icon, Color color) {
   return Column(
     children: <Widget>[
@@ -258,5 +198,87 @@ Widget _button(String label, IconData icon, Color color) {
       ),
       Text(label),
     ],
+  );
+}
+
+Widget _searchButton(PanelController pc) {
+  return FloatingActionButton(
+      child: const Icon(Icons.search),
+      backgroundColor: Colors.green.shade900,
+      onPressed: () {
+        //pc.hide();
+        var empr = const Empresa(
+          id: 1,
+          name: "CUJAE",
+          latitude: 12.2,
+          longitud: 12.45,
+        );
+
+        //DBProvider.db.insertEmpresa(empr);
+
+        //print(DBProvider.db.empresas());
+      });
+}
+
+Widget _buildMap() {
+  return FlutterMap(
+    options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
+    layers: [
+      TileLayerOptions(urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", subdomains: [
+        'a',
+        'b',
+        'c'
+      ]),
+      MarkerLayerOptions(
+        markers: _buildMarkersOnMap(),
+      ),
+    ],
+  );
+}
+
+List<Marker> _buildMarkersOnMap() {
+  List<Marker> markers = <Marker>[];
+  var marker = new Marker(
+    point: LatLng(21.463, -72.322),
+    width: 279.0,
+    height: 256.0,
+    builder: (context) => _buildCustomMarker(21.463, -72.322),
+  );
+  markers.add(marker);
+  var mark = new Marker(
+    point: LatLng(21.463, -73.322),
+    width: 279.0,
+    height: 256.0,
+    builder: (context) => _buildCustomMarker(21.463, -73.322),
+  );
+  markers.add(mark);
+  return markers;
+}
+
+var infoWindowVisible = false;
+GlobalKey<State> key = new GlobalKey();
+
+Stack _buildCustomMarker(double lat, double lon) {
+  return Stack(
+    children: <Widget>[
+      //popup(),
+      marker(lat, lon)
+    ],
+  );
+}
+
+Opacity marker(double lat, double lon) {
+  return Opacity(
+    child: Container(
+        child: IconButton(
+            icon: Icon(Icons.location_on_sharp),
+            iconSize: 45.0,
+            color: Colors.green.shade900,
+            onPressed: () {
+              print(lat);
+              print(lon);
+              //pc.show();
+            })),
+    opacity: infoWindowVisible ? 0.0 : 1.0,
   );
 }
