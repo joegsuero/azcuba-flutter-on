@@ -35,7 +35,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
     panelBuilder: (sc) => _panel(sc, context),
     body: Scaffold(
       appBar: AppBar(
-        title: Text("Catastro AZCUBA"),
+        title: Text("Empresas AZCUBA"),
         backgroundColor: Colors.green.shade900,
       ),
       body: _body(pc),
