@@ -11,10 +11,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PanelController _pc = PanelController();
-  final id = 0;
-  final descripcion = "";
+  final _id = 0;
+  final String descripcion = "";
 
-  @override
   Widget build(BuildContext context) {
     return Material(
       child: _buildSlidingPanel(_pc, context),
