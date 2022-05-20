@@ -59,6 +59,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
         title: Text("SlidingUpPanelExample"),
       ),
       body: _body(pc),
+      floatingActionButton: _searchButton(pc),
     ),
   );
 }
