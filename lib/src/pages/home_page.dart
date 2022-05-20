@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 }*/
 
 Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
-  double _initFabHeight = 120.0;
+  double _initFabHeight = 60.0;
   double _fabHeight = 0;
   double _panelHeightOpen = 0;
   double _panelHeightClosed = 95.0;
