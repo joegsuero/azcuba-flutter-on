@@ -3,24 +3,14 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-
-import 'package:application/src/models/empresa.dart';
+//
 
 class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  PanelController _pc = new PanelController();
-  // LatLng _center = LatLng(21.463, -72.322);
-
-  /*@override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: _buildSlidingPanel(_pc, context),
-      //floatingActionButton: _searchButton(_pc),
-    );
-  }*/
+  final PanelController _pc = PanelController();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +35,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
     panelBuilder: (sc) => _panel(sc, context),
     body: Scaffold(
       appBar: AppBar(
-        title: Text("SlidingUpPanelExample"),
+        title: Text("Catastro AZCUBA"),
         backgroundColor: Colors.green.shade900,
       ),
       body: _body(pc),
