@@ -203,22 +203,7 @@ Widget _button(String label, IconData icon, Color color) {
 }
 
 Widget _searchButton(PanelController pc) {
-  return FloatingActionButton(
-      child: const Icon(Icons.search),
-      backgroundColor: Colors.green.shade900,
-      onPressed: () {
-        //pc.open();
-        var empr = const Empresa(
-          id: 1,
-          name: "CUJAE",
-          latitude: 12.2,
-          longitud: 12.45,
-        );
-
-        //DBProvider.db.insertEmpresa(empr);
-
-        //print(DBProvider.db.empresas());
-      });
+  return FloatingActionButton(child: const Icon(Icons.search), backgroundColor: Colors.green.shade900, onPressed: () {});
 }
 
 Widget _buildMap(PanelController pc) {
