@@ -165,7 +165,7 @@ Widget _showDescription() {
   );
 }
 
-Widget _body(PaneController pc) {
+Widget _body(PanelController pc) {
   return Container(
     child: Column(
       children: [
