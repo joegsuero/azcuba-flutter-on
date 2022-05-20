@@ -30,24 +30,13 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-/*Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
-  return SlidingUpPanel(
-    backdropEnabled: true,
-    controller: pc,
-    panelBuilder: (sc) => _panel(sc, context),
-    body: _body(pc),
-  );
-}*/
-
 Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
   double _initFabHeight = 60.0;
   double _fabHeight = 0;
-  //double _panelHeightOpen = 95;
   double _panelHeightClosed = 0;
 
   return SlidingUpPanel(
     backdropEnabled: true,
-    //maxHeight: _panelHeightOpen,
     minHeight: _panelHeightClosed,
     parallaxEnabled: true,
     parallaxOffset: .5,
@@ -57,6 +46,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
     body: Scaffold(
       appBar: AppBar(
         title: Text("SlidingUpPanelExample"),
+        backgroundColor: Colors.green.shade900,
       ),
       body: _body(pc),
       floatingActionButton: _searchButton(pc),
