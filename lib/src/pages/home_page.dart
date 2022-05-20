@@ -43,7 +43,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
   double _initFabHeight = 60.0;
   double _fabHeight = 0;
   //double _panelHeightOpen = 95;
-  double _panelHeightClosed = 95.0;
+  double _panelHeightClosed = 0;
 
   return SlidingUpPanel(
     backdropEnabled: true,
