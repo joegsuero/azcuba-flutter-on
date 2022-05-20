@@ -49,7 +49,7 @@ Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
     backdropEnabled: true,
     maxHeight: _panelHeightOpen,
     minHeight: _panelHeightClosed,
-    parallaxEnabled: true,
+    parallaxEnabled: false,
     parallaxOffset: .5,
     controller: pc,
     borderRadius: BorderRadius.only(topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0)),
