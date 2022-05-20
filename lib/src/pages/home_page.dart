@@ -181,7 +181,7 @@ Widget _body(PanelController pc) {
     child: Column(
       children: [
         Flexible(
-          child: _buildMap(),
+          child: _buildMap(pc),
         ),
       ],
     ),
@@ -217,7 +217,7 @@ Widget _searchButton(PanelController pc) {
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
       onPressed: () {
-        pc.open();
+        //pc.open();
         var empr = const Empresa(
           id: 1,
           name: "CUJAE",
@@ -231,7 +231,7 @@ Widget _searchButton(PanelController pc) {
       });
 }
 
-Widget _buildMap() {
+Widget _buildMap(PanelController pc) {
   return FlutterMap(
     options: MapOptions(center: LatLng(21.463, -78.322), zoom: 6),
     layers: [
@@ -241,26 +241,26 @@ Widget _buildMap() {
         'c'
       ]),
       MarkerLayerOptions(
-        markers: _buildMarkersOnMap(),
+        markers: _buildMarkersOnMap(pc),
       ),
     ],
   );
 }
 
-List<Marker> _buildMarkersOnMap() {
+List<Marker> _buildMarkersOnMap(PanelController pc) {
   List<Marker> markers = <Marker>[];
   var marker = new Marker(
     point: LatLng(21.463, -72.322),
     width: 279.0,
     height: 256.0,
-    builder: (context) => _buildCustomMarker(21.463, -72.322),
+    builder: (context) => _buildCustomMarker(21.463, -72.322, pc),
   );
   markers.add(marker);
   var mark = new Marker(
     point: LatLng(21.463, -73.322),
     width: 279.0,
     height: 256.0,
-    builder: (context) => _buildCustomMarker(21.463, -73.322),
+    builder: (context) => _buildCustomMarker(21.463, -73.322, pc),
   );
   markers.add(mark);
   return markers;
@@ -269,16 +269,16 @@ List<Marker> _buildMarkersOnMap() {
 var infoWindowVisible = false;
 GlobalKey<State> key = new GlobalKey();
 
-Stack _buildCustomMarker(double lat, double lon) {
+Stack _buildCustomMarker(double lat, double lon, PanelController pc) {
   return Stack(
     children: <Widget>[
       //popup(),
-      marker(lat, lon)
+      marker(lat, lon, pc)
     ],
   );
 }
 
-Opacity marker(double lat, double lon) {
+Opacity marker(double lat, double lon, PanelController pc) {
   return Opacity(
     child: Container(
         child: IconButton(
@@ -286,9 +286,7 @@ Opacity marker(double lat, double lon) {
             iconSize: 45.0,
             color: Colors.green.shade900,
             onPressed: () {
-              print(lat);
-              print(lon);
-              //pc.show();
+              pc.open();
             })),
     opacity: infoWindowVisible ? 0.0 : 1.0,
   );
