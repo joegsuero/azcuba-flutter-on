@@ -217,7 +217,7 @@ Widget _searchButton(PanelController pc) {
       child: const Icon(Icons.search),
       backgroundColor: Colors.green.shade900,
       onPressed: () {
-        pc.show();
+        pc.open();
         var empr = const Empresa(
           id: 1,
           name: "CUJAE",
