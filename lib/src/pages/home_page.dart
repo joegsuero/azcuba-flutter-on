@@ -40,9 +40,19 @@ class _HomePageState extends State<HomePage> {
 }*/
 
 Widget _buildSlidingPanel(PanelController pc, BuildContext context) {
+  double _initFabHeight = 120.0;
+  double _fabHeight = 0;
+  double _panelHeightOpen = 0;
+  double _panelHeightClosed = 95.0;
+
   return SlidingUpPanel(
     backdropEnabled: true,
+    maxHeight: _panelHeightOpen,
+    minHeight: _panelHeightClosed,
+    parallaxEnabled: true,
+    parallaxOffset: .5,
     controller: pc,
+    borderRadius: BorderRadius.only(topLeft: Radius.circular(18.0), topRight: Radius.circular(18.0)),
     panelBuilder: (sc) => _panel(sc, context),
     body: Scaffold(
       appBar: AppBar(
