@@ -11,6 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final PanelController _pc = PanelController();
+  final id = 0;
+  final descripcion = "";
 
   @override
   Widget build(BuildContext context) {
